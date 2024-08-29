@@ -1,5 +1,5 @@
 "use client";
-import Hero from "@/componentes/Hero/Hero";
+import Hero from "@/componentes/Hero";
 import path from "path";
 import { useEffect, useState } from "react";
 export default function first() {
