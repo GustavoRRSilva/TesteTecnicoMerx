@@ -7,6 +7,7 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **29/08/2024** | **Feat:pegando as informações da API** | **Gustavo** |
 | **29/08/2024** | **Feat:pegando as informações dos heróis e colocando na tela** | **Gustavo** |
 | **29/08/2024** | **Feat:Fim da UI da tela inicial** | **Gustavo** |
+| **29/08/2024** | **Feat:Adicionando efeito de hover nos personagens** | **Gustavo** |
 
 ## 🎂 • Sites 
 
