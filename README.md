@@ -3,6 +3,7 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 
 ## 📟 • Avanço 
 | **Data** | **Modificações** | **Author** |
+| --- | --- | --- | 
 | **29/08/2024** | **Feat:First commit** | **Gustavo** |
 | **29/08/2024** | **Feat:pegando as informações da API** | **Gustavo** |
 | **29/08/2024** | **Feat:pegando as informações dos heróis e colocando na tela** | **Gustavo** |
@@ -10,7 +11,7 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **29/08/2024** | **Feat:Adicionando efeito de hover nos personagens** | **Gustavo** |
 | **29/08/2024** | **Feat:Alterando ficon e titulo, adicionando também animação no escudo do capitão america** | **Gustavo** |
 | **29/08/2024** | **Fix:Resolvendo problema das imagens sem aparecer** | **Gustavo** |
-
+| **29/08/2024** | **Fix:Ajustando erro Readme.md** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
