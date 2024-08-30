@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Marvel Comics",
   description: "Created By Gustavo Rodrigues",
   icons: {
-    icon: "/Shield.png", // Caminho para o seu favicon
+    icon: "/shield.png", 
   },
 };
 
