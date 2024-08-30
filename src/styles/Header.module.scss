@@ -9,29 +9,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
+    padding: 0px 10px
+    
   }
 
   img {
-    width: 100%;
+    width: 50%;
     transition: transform 0.5s ease-in-out; 
+    margin-left: auto;
   }
 
   img:hover {
     transform: translateX(-100px) rotate(-360deg); 
   }
 
-
-
 }
 
-@media screen and (min-width:600px) {
-    .header{
-        li{
-           padding: 0 25px;
-        }
-    }
-}
+
 
 @keyframes roll-left {
     from {
