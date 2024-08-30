@@ -1,19 +1,15 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { HeroProps } from "@/types/types";
+import style from "@/styles/Hero.module.scss";
 export default function Hero({ description, name, thumbnail }: HeroProps) {
   console.log(thumbnail);
   return (
-    <div>
-      <Image
-        src={thumbnail}
-        width={100}
-        height={100}
-        alt={`${name} picture`}
-      ></Image>
+    <Link href = ""className={style.Link}>
+      <img className={style.img} src={thumbnail} alt={`${name} picture`}></img>
       <h3>{name}</h3>
-      <p>{description}</p>
-    </div>
+    </Link>
   );
 }
 

@@ -1,7 +1,7 @@
 "use client";
 import Hero from "@/componentes/Hero";
-import path from "path";
 import { useEffect, useState } from "react";
+import style from "@/styles/ListHeroes.module.scss"
 export default function first() {
   const [error, setError] = useState(false);
   const md5 = "4739ead13b844f25749730ae4c134825";
@@ -26,13 +26,13 @@ export default function first() {
   }, []);
 
   return (
-    <main>
+    <main className={style.List}>
       {heroes &&
         heroes.map((hero: any, index: number) => (
           <Hero
             key={index}
             description={hero.description}
-            thumbnail={hero.thumbnail["path"]}
+            thumbnail={`${hero.thumbnail.path}/standard_fantastic.${hero.thumbnail.extension}`}
             name={hero.name}
           />
         ))}

@@ -1,0 +1,41 @@
+.main{
+    .titleDiv{
+        display:flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin:0 auto;
+        width: max-content;
+        font-size: 0.8em;
+    }
+
+    h1{
+        margin: 10px 0 auto;
+        font-weight: bold;
+
+    }
+    span{
+        width:60px;
+        height: 15px;
+        border-radius: 5px;
+        background-color: red;      
+    }
+    .img{
+        width: 100%;
+        height: 150px;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (min-width:500px) {
+    .main{
+        .img{
+            width: 100%;
+            height: auto;
+        }
+        h1{
+            font-size:2.5em
+        }
+    }
+    
+}
