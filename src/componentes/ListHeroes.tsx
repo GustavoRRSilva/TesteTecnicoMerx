@@ -31,7 +31,7 @@ export default function first() {
         heroes.map((hero: any, index: number) => (
           <Hero
             key={index}
-            description={hero.description}
+            id = {hero.id}
             thumbnail={`${hero.thumbnail.path}/standard_fantastic.${hero.thumbnail.extension}`}
             name={hero.name}
           />

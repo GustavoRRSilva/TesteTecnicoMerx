@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
-import Hero from "./Hero/ListHeroes";
-import style from "@/styles/Index.module.scss";
+import Hero from "../componentes/ListHeroes";
+import style from "@/styles/Page.module.scss";
 export default function Home() {
   return (
     <main className={style.main}>

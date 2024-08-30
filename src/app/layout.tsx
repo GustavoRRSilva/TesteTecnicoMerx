@@ -1,22 +1,19 @@
-import type { Metadata } from "next";
+// app/layout.tsx
 import { Inter } from "next/font/google";
 import "../styles/global.scss";
 import Header from "@/componentes/Header";
+
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Marvel Comics",
   description: "Created By Gustavo Rodrigues",
   icons: {
-    icon: "/shield.png", 
+    icon: "/shield.png",
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>

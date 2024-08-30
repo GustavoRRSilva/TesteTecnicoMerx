@@ -13,6 +13,7 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **29/08/2024** | **Fix:Resolvendo problema das imagens sem aparecer** | **Gustavo** |
 | **29/08/2024** | **Fix:Ajustando erro Readme.md** | **Gustavo** |
 | **29/08/2024** | **Test:Teste nova imagem escudo** | **Gustavo** |
+| **30/08/2024** | **Feat:Pegando personagens de forma dinamica** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
