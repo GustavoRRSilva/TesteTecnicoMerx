@@ -72,8 +72,8 @@ export default function HeroTeste() {
               className={styles.heroImage}
             />
             <div>
-              <h2>{hero.name}</h2>
-              <p>{hero.description}</p>
+              <h2>{hero.name || "No name"}</h2>
+              <p className={styles.description}>{hero.description || "No description"}</p>
             </div>
           </div>
           <div className={styles.titleDiv}>
@@ -92,14 +92,14 @@ export default function HeroTeste() {
                         className={styles.comicImage}
                       />
                     ) : (
-                      <div>No image available</div>
+                      <div>No image available...</div>
                     )}
                     <p>{comic.title}</p>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p>No comics available</p>
+              <p>No comics available...</p>
             )}
           </div>
         </div>
