@@ -14,7 +14,15 @@
 
   img {
     width: 100%;
+    transition: transform 0.5s ease-in-out; 
   }
+
+  img:hover {
+    transform: translateX(-100px) rotate(-360deg); 
+  }
+
+
+
 }
 
 @media screen and (min-width:600px) {
@@ -24,3 +32,12 @@
         }
     }
 }
+
+@keyframes roll-left {
+    from {
+      transform: translateX(0) rotate(0deg); // Posição inicial
+    }
+    to {
+      transform: translateX(-500px) rotate(-360deg); // Rola para a esquerda e faz uma rotação completa
+    }
+  }
