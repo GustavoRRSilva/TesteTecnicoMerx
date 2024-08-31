@@ -12,17 +12,17 @@ export default function HeroTeste() {
   const [comicsDetails, setComicsDetails] = useState<Comic[]>([]);
 
   useEffect(() => {
-    // Encapsulate the async function inside useEffect
     const fetchHeroInfo = async () => {
       setError(false);
       try {
         if (!id || (Array.isArray(id) && id.length === 0)) return;
 
-        const heroId = Array.isArray(id) ? id[0] : id; // Ensure id is a string
+        const heroId = Array.isArray(id) ? id[0] : id;
         const { heroData, comicsDetails } = await loadHeroInfo(heroId);
         setHero(heroData);
         setComicsDetails(comicsDetails);
       } catch (err) {
+        console.error('Error fetching data:', err);
         setError(true);
       }
     };
@@ -30,7 +30,10 @@ export default function HeroTeste() {
     fetchHeroInfo();
   }, [id]);
 
-  // Ensure consistent rendering
+  if (error) {
+    return <p className={styles.erromsg}>Something went wrong...</p>;
+  }
+
   return (
     <div className={styles.heroContainer}>
       <div className={styles.titleDiv}>
