@@ -17,6 +17,7 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **30/08/2024** | **Fix:Ajustando css das paginas** | **Gustavo** |
 | **30/08/2024** | **Fix:Ajustando css do footer** | **Gustavo** |
 | **30/08/2024** | **Fix:Ajustando as tipagens** | **Gustavo** |
+| **30/08/2024** | **Feat:Adicionando os links do header e footer** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
