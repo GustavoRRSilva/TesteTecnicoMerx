@@ -31,7 +31,8 @@ export default function HeroTeste() {
   }, [id]);
 
   if (error) {
-    return <p className={styles.erromsg}>Something went wrong...</p>;
+    console.log(error)
+    return <p className={styles.erromsg}>{error}</p>;
   }
 
   return (
