@@ -26,6 +26,7 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **30/08/2024** | **Fix:Criando Services** | **Gustavo** |
 | **30/08/2024** | **Feat:Adicionando link do deploy** | **Gustavo** |
 | **30/08/2024** | **Fix:Ajustando erro do lado do cliente** | **Gustavo** |
+| **30/08/2024** | **Feat:Adicionando vídeo da aplicacão** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
@@ -44,11 +45,11 @@ https://teste-tecnico-merx.vercel.app/herodetails/1011334
 ## 🎂 • Como utilizar na sua máquina
 ### Instalação do projeto
 
-Após clonar o projeto do [repositório Github](https://github.com/Tava1/marvel-app), navegue até a raiz e execute o seguinte comando no terminal:
+Após clonar o projeto do https://github.com/GustavoRRSilva/TesteTecnicoMerx, navegue até a raiz e execute o seguinte comando no terminal:
 
 Este comando irá instalar todas as dependências necessárias do projeto.
-```NPM
-INSTALL && NPM INSTALL SASS
+```
+NPM INSTALL && NPM INSTALL SASS
 ```
 
 Após a instalação das depências, podemos utilizar alguns comando disponíveis.
@@ -59,3 +60,6 @@ Executar o projeto em ambiente local de desenvolvimento.
 NPM RUN DEV
 ```
 
+## 🧭 • Marvel API - Video demonstração
+Segue video da aplicação rodando localmente:
+[https://drive.google.com/file/d/1wfsVK0XnA34oEf1ap5pdA-jN2nVf59uN/view?usp=drive_link](https://drive.google.com/file/d/1wfsVK0XnA34oEf1ap5pdA-jN2nVf59uN/view)
