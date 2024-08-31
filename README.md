@@ -26,6 +26,7 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **30/08/2024** | **Fix:Criando Services** | **Gustavo** |
 | **30/08/2024** | **Feat:Adicionando link do deploy** | **Gustavo** |
 | **30/08/2024** | **Fix:Ajustando erro do lado do cliente** | **Gustavo** |
+| **30/08/2024** | **Feat:Adicionando vídeo da aplicacão** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
@@ -59,3 +60,6 @@ Executar o projeto em ambiente local de desenvolvimento.
 NPM RUN DEV
 ```
 
+## 🧭 • Marvel API - Video demonstração
+Segue video da aplicação rodando localmente:
+[https://drive.google.com/file/d/1wfsVK0XnA34oEf1ap5pdA-jN2nVf59uN/view?usp=drive_link](https://drive.google.com/file/d/1wfsVK0XnA34oEf1ap5pdA-jN2nVf59uN/view)
