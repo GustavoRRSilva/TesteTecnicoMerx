@@ -11,7 +11,6 @@ export const loadHeroes = async () => {
     const data = await response.json();
     return data.data.results;
   } catch (err) {
-    console.error("Error fetching data:", err);
     throw err; 
   }
 };

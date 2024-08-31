@@ -31,7 +31,6 @@ export const loadHeroInfo = async (id: string) => {
       throw new Error("Hero not found");
     }
   } catch (err) {
-    console.error("Error fetching data:", err);
     throw err;
   }
 };
