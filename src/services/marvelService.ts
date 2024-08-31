@@ -17,7 +17,7 @@ export const loadHeroInfo = async (id: string) => {
 
       if (heroData.comics.items.length > 0) {
         const comicsPromises = heroData.comics.items.map(async (comic: { resourceURI: string }) => {
-          const comicRes = `${comic.resourceURI}?ts=${timesStamp}&apikey=${apiKey}&hash=${md5}`;
+          const comicRes = `${comic.resourceURI.replace("http://", "https://")}?ts=${timesStamp}&apikey=${apiKey}&hash=${md5}`;
           const comicResponse = await fetch(comicRes);
           const comicData = await comicResponse.json();
           return comicData.data.results[0] as Comic;
