@@ -8,7 +8,7 @@ export default function HeroTeste() {
   const { id } = useParams();
   const [error, setError] = useState(false);
   const [hero, setHero] = useState<HeroInfos | null>(null);
-  const [comicsDetails, setComicsDetails] = useState<any[]>([]); // Adicione um tipo específico se disponível
+  const [comicsDetails, setComicsDetails] = useState<any[]>([]); 
   const md5 = "4739ead13b844f25749730ae4c134825";
   const apiKey = "15dbc5853fabb98c4a2ae92963f44a9a";
   const timesStamp = 1724962697;
