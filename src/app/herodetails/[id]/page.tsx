@@ -98,19 +98,19 @@ export default function HeroTeste() {
                         className={styles.comicImage}
                       />
                     ) : (
-                      <div>No image available...</div>
+                      <div className = {styles.erromsg}>No image available...</div>
                     )}
                     <p>{comic.title}</p> 
                   </li>
                 ))}
               </ul>
             ) : (
-              <p>No comics available...</p>
+              <p className = {styles.erromsg}>No comics available...</p>
             )}
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p className = {styles.erromsg}>Loading...</p>
       )}
     </div>
   );

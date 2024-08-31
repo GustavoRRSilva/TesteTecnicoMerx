@@ -1,4 +1,5 @@
 ## 🧭 • Marvel API - Projeto
+![Imagem Aplicação](image.png)
 O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Marvel Comics API e construir um website que permita a visualização dos personagens retornados por ela
 
 ## 📟 • Avanço 
@@ -19,14 +20,15 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **30/08/2024** | **Fix:Ajustando as tipagens** | **Gustavo** |
 | **30/08/2024** | **Feat:Adicionando os links do header e footer** | **Gustavo** |
 | **30/08/2024** | **Feat:Adicionando informações no repositório** | **Gustavo** |
+| **30/08/2024** | **Feat:Adicionando filtro** | **Gustavo** |
+| **30/08/2024** | **Fix:Ajustando msgs de erro** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
 
 https://developer.marvel.com/
 
-https://www.figma.com/design/yDZwwZ7bVcdwLYK76ffsYo/Untitled?
-node-id=1-4&t=EcHed2NMsFxDsniN-1
+https://www.figma.com/design/yDZwwZ7bVcdwLYK76ffsYo/Untitled?node-id=1-4&t=EcHed2NMsFxDsniN-1
 
 
 ## 🎂 • Tecnologias Utilizadas

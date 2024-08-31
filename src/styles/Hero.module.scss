@@ -34,9 +34,11 @@
 
   @media screen and (min-width: 600px) {
     width: 40%;
+    min-width: 200px;
   }
 
   @media screen and (min-width: 900px) {
     width: 20%;
+    min-width: 200px;
   }
 }
