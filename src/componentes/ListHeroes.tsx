@@ -1,7 +1,7 @@
 "use client";
 import Hero from "@/componentes/Hero";
 import { useEffect, useState } from "react";
-import style from "@/styles/ListHeroes.module.scss"
+import style from "@/styles/ListHeroes.module.scss";
 export default function first() {
   const [error, setError] = useState(false);
   const md5 = "4739ead13b844f25749730ae4c134825";
@@ -26,16 +26,20 @@ export default function first() {
   }, []);
 
   return (
-    <main className={style.List}>
-      {heroes &&
-        heroes.map((hero: any, index: number) => (
-          <Hero
-            key={index}
-            id = {hero.id}
-            thumbnail={`${hero.thumbnail.path}/standard_fantastic.${hero.thumbnail.extension}`}
-            name={hero.name}
-          />
-        ))}
+    <main className={style.main} >
+      <input type="text" name="" id="" className={style.input}/>
+      <div className={style.List}>
+       
+        {heroes &&
+          heroes.map((hero: any, index: number) => (
+            <Hero
+              key={index}
+              id={hero.id}
+              thumbnail={`${hero.thumbnail.path}/standard_fantastic.${hero.thumbnail.extension}`}
+              name={hero.name}
+            />
+          ))}
+      </div>
     </main>
   );
 }

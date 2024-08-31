@@ -18,8 +18,37 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **30/08/2024** | **Fix:Ajustando css do footer** | **Gustavo** |
 | **30/08/2024** | **Fix:Ajustando as tipagens** | **Gustavo** |
 | **30/08/2024** | **Feat:Adicionando os links do header e footer** | **Gustavo** |
+| **30/08/2024** | **Feat:Adicionando informações no repositório** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
+
 https://developer.marvel.com/
-https://www.figma.com/design/yDZwwZ7bVcdwLYK76ffsYo/Untitled?node-id=1-4&t=EcHed2NMsFxDsniN-1
+
+https://www.figma.com/design/yDZwwZ7bVcdwLYK76ffsYo/Untitled?
+node-id=1-4&t=EcHed2NMsFxDsniN-1
+
+
+## 🎂 • Tecnologias Utilizadas
+- Nextjs com Typescript
+- Sass
+- Git
+
+## 🎂 • Como utilizar na sua máquina
+### Instalação do projeto
+
+Após clonar o projeto do [repositório Github](https://github.com/Tava1/marvel-app), navegue até a raiz e execute o seguinte comando no terminal:
+
+Este comando irá instalar todas as dependências necessárias do projeto.
+```NPM
+INSTALL && NPM INSTALL SASS
+```
+
+Após a instalação das depências, podemos utilizar alguns comando disponíveis.
+
+### :construction: Ambiente de desenvolvimento
+Executar o projeto em ambiente local de desenvolvimento.
+```
+NPM RUN DEV
+```
+

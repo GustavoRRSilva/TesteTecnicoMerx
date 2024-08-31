@@ -94,7 +94,7 @@ export default function HeroTeste() {
                     {comic.thumbnail ? (
                       <img
                         src={`${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`}
-                        alt={comic.title} 
+                        alt={comic.title} // 
                         className={styles.comicImage}
                       />
                     ) : (
