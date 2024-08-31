@@ -13,7 +13,6 @@ export default function HeroList() {
     setError(false);
     try {
       const heroData = await loadHeroes();
-      console.log(heroData);
       setHeroes(heroData);
       setFilteredHeroes(heroData); 
     } catch (err) {

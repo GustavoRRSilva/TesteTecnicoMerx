@@ -11,32 +11,26 @@ export default function HeroTeste() {
   const [hero, setHero] = useState<HeroInfos | null>(null);
   const [comicsDetails, setComicsDetails] = useState<Comic[]>([]);
 
-  const fetchHeroInfo = async () => {
-    setError(false);
-    try {
-      if (!id || (Array.isArray(id) && id.length === 0)) return;
-
-      const heroId = Array.isArray(id) ? id[0] : id; // Ensure id is a string
-      const { heroData, comicsDetails } = await loadHeroInfo(heroId);
-      setHero(heroData);
-      setComicsDetails(comicsDetails);
-    } catch (err) {
-      setError(true);
-    }
-  };
-
   useEffect(() => {
+    // Encapsulate the async function inside useEffect
+    const fetchHeroInfo = async () => {
+      setError(false);
+      try {
+        if (!id || (Array.isArray(id) && id.length === 0)) return;
+
+        const heroId = Array.isArray(id) ? id[0] : id; // Ensure id is a string
+        const { heroData, comicsDetails } = await loadHeroInfo(heroId);
+        setHero(heroData);
+        setComicsDetails(comicsDetails);
+      } catch (err) {
+        setError(true);
+      }
+    };
+
     fetchHeroInfo();
   }, [id]);
 
-  if (error) {
-    return <div>Error loading hero information.</div>;
-  }
-
-  useEffect(() => {
-    console.log(comicsDetails);
-  }, [comicsDetails]);
-
+  // Ensure consistent rendering
   return (
     <div className={styles.heroContainer}>
       <div className={styles.titleDiv}>
