@@ -6,10 +6,12 @@ export type HeroProps = {
 
 // Adicionando 'id' à interface Comic para corresponder à estrutura dos dados retornados pela API
 export interface Comic {
-  id: number; // Adicione esta propriedade
-  resourceURI: string;
+  id: number;
   title: string;
-  thumbnail: Thumbnail;
+  thumbnail: {
+    path: string;
+    extension: string;
+  };
 }
 
 // Mantendo as outras interfaces como estão
@@ -29,6 +31,11 @@ export interface HeroInfos {
   id: number;
   name: string;
   description: string;
-  thumbnail: Thumbnail;
-  comics: Comics;
+  thumbnail: {
+    path: string;
+    extension: string;
+  };
+  comics: {
+    items: { resourceURI: string }[]; 
+  };
 }

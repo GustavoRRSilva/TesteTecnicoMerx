@@ -12,4 +12,4 @@ export default function Hero({ name, thumbnail,id }: HeroProps) {
   );
 }
 
-//name, descprition,thumbnail
+

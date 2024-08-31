@@ -3,65 +3,40 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HeroInfos, Comic } from "@/types/types";
 import styles from "@/styles/HeroDetail.module.scss";
+import { loadHeroInfo } from "@/services/marvelService";
 
 export default function HeroTeste() {
   const { id } = useParams();
   const [error, setError] = useState<boolean>(false);
   const [hero, setHero] = useState<HeroInfos | null>(null);
   const [comicsDetails, setComicsDetails] = useState<Comic[]>([]);
-  const md5 = "4739ead13b844f25749730ae4c134825";
-  const apiKey = "15dbc5853fabb98c4a2ae92963f44a9a";
-  const timesStamp = 1724962697;
 
-  const loadHeroInfo = async () => {
+  const fetchHeroInfo = async () => {
     setError(false);
     try {
-      if (!id) return;
-      const res = `https://gateway.marvel.com/v1/public/characters/${id}?ts=${timesStamp}&apikey=${apiKey}&hash=${md5}`;
-      const response = await fetch(res);
-      const data = await response.json();
-      console.log('Hero data:', data); // Debug: Verifique a estrutura dos dados
+      if (!id || (Array.isArray(id) && id.length === 0)) return;
 
-      if (data.data && data.data.results && data.data.results.length > 0) {
-        const heroData: HeroInfos = data.data.results[0];
-        setHero(heroData);
-
-        // Buscar detalhes das comics
-        if (heroData.comics.items.length > 0) {
-          const comicsPromises = heroData.comics.items.map(
-            async (comic) => {
-              const comicRes = `${comic.resourceURI}?ts=${timesStamp}&apikey=${apiKey}&hash=${md5}`;
-              const comicResponse = await fetch(comicRes);
-              const comicData = await comicResponse.json();
-              console.log('Comic data:', comicData); // Debug: Verifique a estrutura dos dados
-              // Ajuste para corresponder ao tipo Comic atualizado
-              return comicData.data.results[0] as Comic;
-            }
-          );
-
-          const comics = await Promise.all(comicsPromises);
-          setComicsDetails(comics);
-        }
-      } else {
-        setError(true);
-      }
+      const heroId = Array.isArray(id) ? id[0] : id; // Ensure id is a string
+      const { heroData, comicsDetails } = await loadHeroInfo(heroId);
+      setHero(heroData);
+      setComicsDetails(comicsDetails);
     } catch (err) {
       setError(true);
-      console.error("Error fetching data:", err);
     }
   };
 
   useEffect(() => {
-    loadHeroInfo();
+    fetchHeroInfo();
   }, [id]);
 
   if (error) {
     return <div>Error loading hero information.</div>;
   }
 
-  useEffect(()=>{
-    console.log(comicsDetails)
-  },[comicsDetails])
+  useEffect(() => {
+    console.log(comicsDetails);
+  }, [comicsDetails]);
+
   return (
     <div className={styles.heroContainer}>
       <div className={styles.titleDiv}>
@@ -89,28 +64,27 @@ export default function HeroTeste() {
             {comicsDetails.length > 0 ? (
               <ul className={styles.comicList}>
                 {comicsDetails.map((comic) => (
-                 
                   <li key={comic.id} className={styles.comicItem}>
                     {comic.thumbnail ? (
                       <img
                         src={`${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`}
-                        alt={comic.title} // 
+                        alt={comic.title}
                         className={styles.comicImage}
                       />
                     ) : (
-                      <div className = {styles.erromsg}>No image available...</div>
+                      <div className={styles.erromsg}>No image available...</div>
                     )}
-                    <p>{comic.title}</p> 
+                    <p>{comic.title}</p>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className = {styles.erromsg}>No comics available...</p>
+              <p className={styles.erromsg}>No comics available...</p>
             )}
           </div>
         </div>
       ) : (
-        <p className = {styles.erromsg}>Loading...</p>
+        <p className={styles.erromsg}>Loading...</p>
       )}
     </div>
   );
