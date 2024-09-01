@@ -17,3 +17,14 @@
     flex-direction: column;
     justify-content: center;
 }
+.loading{
+    text-align: center;
+    margin: 20px auto;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    width: max-content;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+}

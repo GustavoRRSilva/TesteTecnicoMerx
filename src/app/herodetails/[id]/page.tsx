@@ -84,6 +84,7 @@ export default function HeroTeste() {
       ) : (
         <p className={styles.erromsg}>Loading...</p>
       )}
+
     </div>
   );
 }
