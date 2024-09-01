@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import style from "@/styles/ListHeroes.module.scss";
 import { loadHeroes } from "@/services/marvelPersons";
 
+// Número de heróis por página
 const HEROES_PER_PAGE = 20;
 
 export default function HeroList({ currentPage }: { currentPage: number }) {
@@ -12,13 +13,14 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
   const [filteredHeroes, setFilteredHeroes] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [sortOrder, setSortOrder] = useState<string>("asc");
 
   const fetchHeroes = async () => {
     setError(false);
     setLoading(true);
     try {
       const offset = (currentPage - 1) * HEROES_PER_PAGE;
-      const heroData = await loadHeroes(offset, HEROES_PER_PAGE, searchTerm);
+      const heroData = await loadHeroes(offset, HEROES_PER_PAGE);
       setHeroes(heroData);
     } catch (err) {
       setError(true);
@@ -29,22 +31,36 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
 
   useEffect(() => {
     fetchHeroes();
-  }, [currentPage, searchTerm]);
+  }, [currentPage]);
 
   useEffect(() => {
-    if (searchTerm.trim() === "") {
-      setFilteredHeroes(heroes);
-    } else {
-      setFilteredHeroes(
-        heroes.filter((hero) =>
-          hero.name.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+    let result = heroes;
+
+    // Filtrar por nome
+    if (searchTerm.trim() !== "") {
+      result = result.filter((hero) =>
+        hero.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-  }, [searchTerm, heroes]);
+
+    // Ordenar por nome
+    result = result.sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.name.localeCompare(b.name);
+      } else {
+        return b.name.localeCompare(a.name);
+      }
+    });
+
+    setFilteredHeroes(result);
+  }, [searchTerm, heroes, sortOrder]); // Certifique-se de que o efeito seja executado sempre que esses valores mudarem
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSortOrder(event.target.value);
   };
 
   if (error) {
@@ -57,11 +73,17 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
         type="text"
         value={searchTerm}
         onChange={handleSearchChange}
-        placeholder="Search for a hero..."
+        placeholder="Procure por um herói..."
         className={style.input}
       />
+
+      <select value={sortOrder} onChange={handleSortChange} className={style.select}>
+        <option value="asc">Ordem da página por nome (A-Z)</option>
+        <option value="desc">Ordem da página por nome (Z-A)</option>
+      </select>
+
       {loading ? (
-        <p className={style.loading}>Loading...</p>
+        <div className={style.loading}>Loading...</div>
       ) : (
         <div className={style.List}>
           {filteredHeroes.length > 0 ? (
@@ -74,7 +96,7 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
               />
             ))
           ) : (
-            <p className={style.loading}>Loading...</p>
+            <p>No heroes found.</p>
           )}
         </div>
       )}
