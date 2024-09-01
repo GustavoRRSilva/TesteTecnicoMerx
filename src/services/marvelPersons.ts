@@ -1,5 +1,3 @@
-// src/services/marvelService.ts
-
 const BASE_URL = "https://gateway.marvel.com/v1/public/characters";
 const md5 = "4739ead13b844f25749730ae4c134825";
 const apiKey = "15dbc5853fabb98c4a2ae92963f44a9a";

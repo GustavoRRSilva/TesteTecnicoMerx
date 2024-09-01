@@ -13,14 +13,14 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
   const [filteredHeroes, setFilteredHeroes] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [sortOrder, setSortOrder] = useState<string>("asc");
+  const [sortOrder, setSortOrder] = useState<string>("asc"); // Inicializado como "asc" (A-Z)
 
   const fetchHeroes = async () => {
     setError(false);
     setLoading(true);
     try {
       const offset = (currentPage - 1) * HEROES_PER_PAGE;
-      const heroData = await loadHeroes(offset, HEROES_PER_PAGE);
+      const heroData = await loadHeroes(offset, HEROES_PER_PAGE, searchTerm); 
       setHeroes(heroData);
     } catch (err) {
       setError(true);
@@ -31,19 +31,12 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
 
   useEffect(() => {
     fetchHeroes();
-  }, [currentPage]);
+  }, [currentPage, searchTerm]); 
 
   useEffect(() => {
     let result = heroes;
 
-    // Filtrar por nome
-    if (searchTerm.trim() !== "") {
-      result = result.filter((hero) =>
-        hero.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-
-    // Ordenar por nome
+   
     result = result.sort((a, b) => {
       if (sortOrder === "asc") {
         return a.name.localeCompare(b.name);
@@ -53,7 +46,7 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
     });
 
     setFilteredHeroes(result);
-  }, [searchTerm, heroes, sortOrder]); // Certifique-se de que o efeito seja executado sempre que esses valores mudarem
+  }, [heroes, sortOrder]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);

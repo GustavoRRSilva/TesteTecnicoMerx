@@ -1,5 +1,5 @@
 "use client"
-import Image from "next/image";
+
 import { useState } from "react";
 import HeroList from "../componentes/ListHeroes";
 import style from "@/styles/Page.module.scss";
