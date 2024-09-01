@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import Image from "next/image";
 import { useState } from "react";
 import HeroList from "../componentes/ListHeroes";
@@ -19,7 +19,6 @@ export default function Home() {
         <span></span>
       </div>
       <HeroList currentPage={currentPage} />
-
       <ul className={style.options}>
         {[1, 2, 3, 4, 5, 6, 7, 8].map((page) => (
           <li

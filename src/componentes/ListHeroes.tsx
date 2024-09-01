@@ -4,32 +4,32 @@ import { useEffect, useState } from "react";
 import style from "@/styles/ListHeroes.module.scss";
 import { loadHeroes } from "@/services/marvelPersons";
 
-const HEROES_PER_PAGE = 20; // Número de heróis por página
+const HEROES_PER_PAGE = 20;
 
 export default function HeroList({ currentPage }: { currentPage: number }) {
   const [error, setError] = useState<boolean>(false);
   const [heroes, setHeroes] = useState<any[]>([]);
   const [filteredHeroes, setFilteredHeroes] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false); // Novo estado para carregar
+  const [loading, setLoading] = useState<boolean>(false);
 
   const fetchHeroes = async () => {
     setError(false);
-    setLoading(true); // Inicia o carregamento
+    setLoading(true);
     try {
       const offset = (currentPage - 1) * HEROES_PER_PAGE;
-      const heroData = await loadHeroes(offset, HEROES_PER_PAGE);
+      const heroData = await loadHeroes(offset, HEROES_PER_PAGE, searchTerm);
       setHeroes(heroData);
     } catch (err) {
       setError(true);
     } finally {
-      setLoading(false); // Finaliza o carregamento
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     fetchHeroes();
-  }, [currentPage]);
+  }, [currentPage, searchTerm]);
 
   useEffect(() => {
     if (searchTerm.trim() === "") {
@@ -61,7 +61,7 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
         className={style.input}
       />
       {loading ? (
-        <p className={style.loading}>Loading...</p> // Mensagem de carregamento
+        <p className={style.loading}>Loading...</p>
       ) : (
         <div className={style.List}>
           {filteredHeroes.length > 0 ? (
@@ -74,7 +74,7 @@ export default function HeroList({ currentPage }: { currentPage: number }) {
               />
             ))
           ) : (
-            <p>No heroes found.</p>
+            <p className={style.loading}>Loading...</p>
           )}
         </div>
       )}

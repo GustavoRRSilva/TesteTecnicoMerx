@@ -27,8 +27,9 @@ O Marvel API é um projeto Front-end desenvolvido para fornecer é consumir a Ma
 | **30/08/2024** | **Feat:Adicionando link do deploy** | **Gustavo** |
 | **30/08/2024** | **Fix:Ajustando erro do lado do cliente** | **Gustavo** |
 | **30/08/2024** | **Feat:Adicionando vídeo da aplicacão** | **Gustavo** |
-| **31/08/2024** | **Feat:Adicionando páginação na primeira página, ajustando paragrafos de loading e melhorando responsividade** | **Gustavo** |
-| **31/08/2024** | **Fix:Ajustando readme** | **Gustavo** |
+| **01/08/2024** | **Feat:Adicionando páginação na primeira página, ajustando paragrafos de loading e melhorando responsividade** | **Gustavo** |
+| **01/08/2024** | **Fix:Ajustando readme** | **Gustavo** |
+| **01/08/2024** | **Feat:Criando busca global por personagens** | **Gustavo** |
 ## 🎂 • Sites 
 
 https://github.com/GustavoRRSilva/TesteTecnicoMerx
